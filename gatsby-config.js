@@ -5,7 +5,7 @@ dotenv.config({ path: '.env' });
 module.exports = {
   siteMetadata: {
     title: 'tech notes',
-    siteUrl: 'https://tech-notes-app.netlify.app/',
+    siteUrl: 'https://tech-notes.dev/',
     enlgishDescription:
       'tech notes is a page of references and simple definitions about web technologies, programming languages, frameworks and libraries.',
     spanishDescription:

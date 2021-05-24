@@ -7,7 +7,7 @@ import { Container } from './Header.styles';
 export default function Header(): JSX.Element {
   return (
     <Container>
-      <Link to="/">
+      <Link aria-label="home" to="/">
         <Logo>tech notes</Logo>
       </Link>
     </Container>

@@ -26,6 +26,7 @@ export default function RadioButton(props: IProps): JSX.Element {
     <Container>
       <Large>{languageName}</Large>
       <Link
+        aria-label={languageName}
         onClick={() => handleLanguage(languageName)}
         to={`/${languageName}/${url}`}
       >

@@ -55,6 +55,7 @@ export default function CodeBlock(props: IProps): JSX.Element {
             isActive={showPopUp}
             type="button"
             onClick={handleCopyButton}
+            aria-label="copy button"
           >
             <FiCopy size="1.5em" color={colors.gray} />
           </IconButton>

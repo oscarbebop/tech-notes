@@ -66,6 +66,7 @@ export default function Sidebar(): JSX.Element {
       </SidebarContainer>
       <SidebarButton
         type="button"
+        aria-label="sidebar button"
         ItIsActive={activeSidebar}
         onClick={() => handleSidebar(!activeSidebar)}
       >

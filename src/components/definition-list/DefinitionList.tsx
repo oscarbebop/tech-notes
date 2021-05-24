@@ -4,15 +4,14 @@ import { Link } from 'gatsby';
 import MainContext from '../../context/context';
 import { CategoryFilter, IContext } from '../../context/types';
 
-// import { SanityDefinitions } from '@/graphqlTypes';
+import { SanityDefinitions } from '../../graphqlTypes';
 
 import { colors } from '../../constants';
 import { LinkText } from '../ui';
 import { Container } from './DefinitionList.styles';
 
 interface IProps {
-  // definitions: SanityDefinitions[];
-  definitions: any;
+  definitions: SanityDefinitions[];
 }
 
 export default function DefinitionList(props: IProps): JSX.Element {
@@ -21,8 +20,7 @@ export default function DefinitionList(props: IProps): JSX.Element {
   const { category, language, searchValue, setSearchValue, setURL } =
     useContext<IContext>(MainContext);
 
-  // let allDefinitions: SanityDefinitions[];
-  let allDefinitions: any[];
+  let allDefinitions: SanityDefinitions[];
 
   if (category === CategoryFilter.all) {
     allDefinitions = definitions;
@@ -37,13 +35,10 @@ export default function DefinitionList(props: IProps): JSX.Element {
     setSearchValue(null);
   };
 
-  // ############
-  // colocar types SanityDefinitions
-  // ############
   return (
     <Container>
       {allDefinitions
-        .filter(element => {
+        .filter((element: SanityDefinitions) => {
           if (!searchValue) {
             return element;
           }
@@ -52,10 +47,11 @@ export default function DefinitionList(props: IProps): JSX.Element {
             element
           );
         })
-        .map(definition => (
+        .map((definition: SanityDefinitions) => (
           <Link
             to={`/${language}/${definition.technology[0].technologie}/${definition.title}`}
             key={definition.id}
+            aria-label={definition.title}
           >
             <LinkText
               onClick={() =>
