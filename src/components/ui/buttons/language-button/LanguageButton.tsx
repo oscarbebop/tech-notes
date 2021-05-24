@@ -5,7 +5,7 @@ import { FiGlobe as World } from 'react-icons/fi';
 import MainContext from '../../../../context/context';
 import { IContext, Lang, Theme } from '../../../../context/types';
 
-// import { SanityLanguages } from '@/graphqlTypes';
+import { SanityLanguages } from '../../../../graphqlTypes';
 import { languagesQuery } from '../../../../gql/languages';
 
 import { colors } from '../../../../constants';
@@ -13,8 +13,7 @@ import { Container } from './LanguageButton.styles';
 import RadioButton from '../radio-button';
 
 export default function LanguageButton(): JSX.Element {
-  // const data: SanityLanguages[] = languagesQuery();
-  const data = languagesQuery();
+  const data: SanityLanguages[] = languagesQuery();
 
   const { changeLanguage, language, theme } = useContext<IContext>(MainContext);
 
@@ -27,12 +26,10 @@ export default function LanguageButton(): JSX.Element {
 
   const isTheThemeDark = theme === Theme.dark;
 
-  // {data.map((element: SanityLanguages)
-
   return (
     <Container>
       <World size="1.5em" color={isTheThemeDark ? colors.white : colors.dark} />
-      {data.map(element => (
+      {data.map((element: SanityLanguages) => (
         <RadioButton
           key={element.id}
           handleLanguage={handleLanguage}

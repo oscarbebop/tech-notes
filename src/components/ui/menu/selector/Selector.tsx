@@ -1,30 +1,31 @@
 import React, { useContext } from 'react';
 
 import MainContext from '../../../../context/context';
-import { CategoryFilter, IContext } from '../../../../context/types';
+import { CategoryFilter, IContext, Lang } from '../../../../context/types';
 
-// import { SanityTechnologies } from '@/graphqlTypes';
+import { SanityTechnologies } from '../../../../graphqlTypes';
 
 import { Select } from './Selector.styles';
 
 interface IProps {
-  // technologies: SanityTechnologies[];
-  technologies: any[];
+  technologies: SanityTechnologies[];
 }
 
 export default function Selector(props: IProps): JSX.Element {
   const { technologies } = props;
 
-  const { category, changeCategory } = useContext<IContext>(MainContext);
+  const { category, changeCategory, language } =
+    useContext<IContext>(MainContext);
+
+  const allText = language === Lang.EN ? 'all' : 'todos';
 
   return (
     <Select
       defaultValue={category}
       onChange={element => changeCategory(element.target.value)}
     >
-      {/* {technologies.reverse().map((technology: SanityTechnologies) => ( */}
-      <option value={CategoryFilter.all}>all</option>
-      {technologies.reverse().map(technology => (
+      <option value={CategoryFilter.all}>{allText}</option>
+      {technologies.reverse().map((technology: SanityTechnologies) => (
         <option key={technology.id} value={technology.technologie}>
           {technology.technologie}
         </option>

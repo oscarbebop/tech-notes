@@ -6,7 +6,7 @@ import { IContext, Lang } from '../../context/types';
 import { Helmet } from 'react-helmet';
 
 import { metadataQuery } from '../../gql/metadata';
-// import { SiteSiteMetadata } from '@/graphqlTypes';
+import { SiteSiteMetadata } from '../../graphqlTypes';
 
 interface IProps {
   title: string;
@@ -18,8 +18,7 @@ export default function SEO(props: IProps): JSX.Element {
 
   const { language } = useContext<IContext>(MainContext);
 
-  // const data: SiteSiteMetadata = metadataQuery();
-  const data = metadataQuery();
+  const data: SiteSiteMetadata = metadataQuery();
 
   const {
     enlgishDescription,

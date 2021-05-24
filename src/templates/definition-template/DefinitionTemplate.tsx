@@ -6,7 +6,7 @@ import spacetime from 'spacetime';
 import MainContext from '../../context/context';
 import { IContext } from '../../context/types';
 
-// import { Query } from '@/graphqlTypes';
+import { Query } from '../../graphqlTypes';
 
 import BaseBlockContent from '@sanity/block-content-to-react';
 
@@ -49,8 +49,7 @@ export const definitionQuery = graphql`
 `;
 
 interface IProps {
-  // data: Query;
-  data: any;
+  data: Query;
 }
 
 export default function DefinitionTemplate(props: IProps): JSX.Element {

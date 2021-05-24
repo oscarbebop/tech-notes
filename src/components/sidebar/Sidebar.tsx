@@ -5,10 +5,10 @@ import { IContext, Lang, Theme } from '../../context/types';
 
 import { definitionsQuery } from '../../gql/definitions';
 import { technologieQuery } from '../../gql/technologies';
-// import {
-//   SanityDefinitionsConnection,
-//   SanityTechnologies,
-// } from '@/graphqlTypes';
+import {
+  SanityDefinitionsConnection,
+  SanityTechnologies
+} from '../../graphqlTypes';
 
 import { FiChevronLeft as Arrow } from 'react-icons/fi';
 import { useWindowSize } from '@react-hook/window-size';
@@ -26,10 +26,8 @@ import {
 } from './Sidebar.styles';
 
 export default function Sidebar(): JSX.Element {
-  // const data: SanityDefinitionsConnection = definitionsQuery();
-  // const technologies: SanityTechnologies[] = technologieQuery();
-  const data = definitionsQuery();
-  const technologies = technologieQuery();
+  const data: SanityDefinitionsConnection = definitionsQuery();
+  const technologies: SanityTechnologies[] = technologieQuery();
 
   const [widthD] = useWindowSize();
 

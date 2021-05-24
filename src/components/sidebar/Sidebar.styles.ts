@@ -7,7 +7,7 @@ export const Container = styled.div<{ ItIsActive: boolean }>`
   width: 270px;
   height: 100%;
   position: fixed;
-  transition: ${animations.normal};
+  transition: ${animations.slow};
   ${({ ItIsActive }) => (ItIsActive ? 'left: 0;' : 'left: -230px;')}
 `;
 
