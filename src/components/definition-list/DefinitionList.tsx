@@ -52,17 +52,13 @@ export default function DefinitionList(props: IProps): JSX.Element {
             to={`/${language}/${definition.technology[0].technologie}/${definition.title}`}
             key={definition.id}
             aria-label={definition.title}
+            onClick={() =>
+              handleLinkClick(
+                `${definition.technology[0].technologie}/${definition.title}`
+              )
+            }
           >
-            <LinkText
-              onClick={() =>
-                handleLinkClick(
-                  `${definition.technology[0].technologie}/${definition.title}`
-                )
-              }
-              color={colors.strongGray}
-            >
-              {definition.title}
-            </LinkText>
+            <LinkText color={colors.strongGray}>{definition.title}</LinkText>
           </Link>
         ))}
     </Container>
