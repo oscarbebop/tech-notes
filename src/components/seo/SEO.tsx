@@ -38,7 +38,10 @@ export default function SEO(props: IProps): JSX.Element {
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
       {/* Meta Tags */}
       <meta name="description" content={websiteDescription} />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+      />
       <meta charSet="utf-8" />
       {/* Open Graph */}
       <meta property="og:image" content={image} />
