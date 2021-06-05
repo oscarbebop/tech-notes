@@ -12,7 +12,13 @@ import BaseBlockContent from '@sanity/block-content-to-react';
 
 import Layout from '../../components/layout';
 import SEO from '../../components/seo';
-import { CodeBlock, Small, Subtitle, Title } from '../../components/ui';
+import {
+  CodeBlock,
+  ParagraphPlaceholder,
+  Small,
+  Subtitle,
+  Title
+} from '../../components/ui';
 
 import { DateContainer } from './DefinitionTemplate.styles';
 
@@ -66,16 +72,30 @@ export default function DefinitionTemplate(props: IProps): JSX.Element {
 
   return (
     <>
-      <SEO description={content[language][0].children[0].text} title={title} />
-      <Layout>
-        <Title>{title}</Title>
-        <Subtitle>{technology[0].technologie}</Subtitle>
-        <BaseBlockContent key={id} blocks={_rawContent[language]} />
-        <CodeBlock code={code[0].code} technology={technology[0].technologie} />
-        <DateContainer>
-          <Small>Last updated: {formattedDate}</Small>
-        </DateContainer>
-      </Layout>
+      {!data ? (
+        <Layout>
+          <ParagraphPlaceholder />
+        </Layout>
+      ) : (
+        <>
+          <SEO
+            description={content[language][0].children[0].text}
+            title={title}
+          />
+          <Layout>
+            <Title>{title}</Title>
+            <Subtitle>{technology[0].technologie}</Subtitle>
+            <BaseBlockContent key={id} blocks={_rawContent[language]} />
+            <CodeBlock
+              code={code[0].code}
+              technology={technology[0].technologie}
+            />
+            <DateContainer>
+              <Small>Last updated: {formattedDate}</Small>
+            </DateContainer>
+          </Layout>
+        </>
+      )}
     </>
   );
 }

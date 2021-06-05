@@ -53,6 +53,7 @@ export interface IThemeColors {
   codeHeaderColor: string;
   codeEditorBackground: string;
   callToAction: string;
+  gradient: string;
   shadow: string;
 }
 

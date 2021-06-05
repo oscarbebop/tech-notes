@@ -10,6 +10,7 @@ import { languagesQuery } from '../../../../gql/languages';
 
 import { colors } from '../../../../constants';
 import { Container } from './LanguageButton.styles';
+import { LinePlaceholder } from '../../placeholders';
 import RadioButton from '../radio-button';
 
 export default function LanguageButton(): JSX.Element {
@@ -29,13 +30,17 @@ export default function LanguageButton(): JSX.Element {
   return (
     <Container>
       <World size="1.5em" color={isTheThemeDark ? colors.white : colors.dark} />
-      {data.map((element: SanityLanguages) => (
-        <RadioButton
-          key={element.id}
-          handleLanguage={handleLanguage}
-          languageName={element.language}
-        />
-      ))}
+      {data.length === 0 ? (
+        <LinePlaceholder width="70%" height="20px" />
+      ) : (
+        data.map((element: SanityLanguages) => (
+          <RadioButton
+            key={element.id}
+            handleLanguage={handleLanguage}
+            languageName={element.language}
+          />
+        ))
+      )}
     </Container>
   );
 }

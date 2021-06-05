@@ -4,13 +4,29 @@ import { darkTheme, lightTheme } from '../themes';
 import { CategoryFilter, ContextTypes, Lang, Theme } from './types';
 import Reducer from './reducer';
 
+// Language
+if (!localStorage.getItem('language')) {
+  localStorage.setItem('language', 'en');
+}
+
+const initialLanguage: Lang =
+  localStorage.getItem('language') === 'en' ? Lang.EN : Lang.ES;
+
+// theme
+if (!localStorage.getItem('theme')) {
+  localStorage.setItem('theme', 'light');
+}
+
+const initialTheme: Theme =
+  localStorage.getItem('theme') === 'light' ? Theme.light : Theme.dark;
+
 const defaultState: any = {
   activeSidebar: true,
   category: CategoryFilter.all,
   currentURL: null,
-  language: Lang.EN,
+  language: initialLanguage,
   searchValue: null,
-  theme: Theme.light,
+  theme: initialTheme,
   themeColor: lightTheme
 };
 

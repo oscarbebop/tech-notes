@@ -10,7 +10,7 @@ import BaseBlockContent from '@sanity/block-content-to-react';
 
 import Layout from '../../components/layout';
 import SEO from '../../components/seo';
-import { CodeBlock, Title } from '../../components/ui';
+import { CodeBlock, ParagraphPlaceholder, Title } from '../../components/ui';
 
 export default function HomeTemplate(): JSX.Element {
   const data: SanityPages = homeQuery();
@@ -21,12 +21,20 @@ export default function HomeTemplate(): JSX.Element {
 
   return (
     <>
-      <SEO title="Home" />
-      <Layout>
-        <Title>{title}</Title>
-        <BaseBlockContent key={id} blocks={_rawContent[language]} />
-        <CodeBlock code={code[0].code} technology="javascript" />
-      </Layout>
+      {!data ? (
+        <Layout>
+          <ParagraphPlaceholder />
+        </Layout>
+      ) : (
+        <>
+          <SEO title="Home" />
+          <Layout>
+            <Title>{title}</Title>
+            <BaseBlockContent key={id} blocks={_rawContent[language]} />
+            <CodeBlock code={code[0].code} technology="javascript" />
+          </Layout>
+        </>
+      )}
     </>
   );
 }

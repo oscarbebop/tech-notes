@@ -1,4 +1,4 @@
-import { colors, shadows } from '../constants';
+import { colors, gradients, shadows } from '../constants';
 import { IThemeColors } from '../context/types';
 
 export const darkTheme: IThemeColors = {
@@ -7,6 +7,7 @@ export const darkTheme: IThemeColors = {
   codeHeaderColor: colors.darkLight,
   codeEditorBackground: colors.dark,
   callToAction: colors.aqua,
+  gradient: gradients.dark,
   shadow: shadows.dark
 };
 
@@ -16,5 +17,6 @@ export const lightTheme: IThemeColors = {
   codeHeaderColor: colors.mediumGray,
   codeEditorBackground: colors.lightGray,
   callToAction: colors.dark,
+  gradient: gradients.white,
   shadow: shadows.normal
 };

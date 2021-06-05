@@ -14,7 +14,13 @@ import { FiChevronLeft as Arrow } from 'react-icons/fi';
 import { useWindowSize } from '@react-hook/window-size';
 
 import { colors } from '../../constants';
-import { Heading, LanguageButton, Selector, ThemeButton } from '../ui';
+import {
+  Heading,
+  LanguageButton,
+  LinePlaceholder,
+  Selector,
+  ThemeButton
+} from '../ui';
 import DefinitionList from '../definition-list';
 import Header from '../header';
 import Searcher from '../searcher';
@@ -53,7 +59,11 @@ export default function Sidebar(): JSX.Element {
         <Header />
         <Searcher />
         <Heading>
-          {totalCount} {english ? 'Definitions' : 'Definiciones'}
+          {!totalCount ? (
+            <LinePlaceholder width="95%" height="20px" />
+          ) : (
+            `${totalCount} ${english ? 'Definitions' : 'Definiciones'}`
+          )}
         </Heading>
         <DefinitionList definitions={nodes} />
         <Selector technologies={technologies} />

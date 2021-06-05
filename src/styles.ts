@@ -51,6 +51,25 @@ const GlobalStyle = createGlobalStyle`
     color: black;
   }
 
+  @keyframes placeHolderAnimation {
+    0% {
+      background-position: -468px 0;
+    }
+    100% {
+      background-position: 468px 0;
+    }
+  }
+
+  .placeholder_animation {
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderAnimation;
+    animation-timing-function: linear;
+    background: ${({ theme }) => theme.gradient};
+    background-size: 800px 104px;
+  }
+
 `;
 
 export default GlobalStyle;

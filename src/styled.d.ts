@@ -7,6 +7,7 @@ declare module 'styled-components' {
     codeHeaderColor: string;
     codeEditorBackground: string;
     callToAction: string;
+    gradient: string;
     shadow: string;
   }
 }
