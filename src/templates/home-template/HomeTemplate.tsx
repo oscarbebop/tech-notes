@@ -12,11 +12,13 @@ import Layout from '../../components/layout';
 import SEO from '../../components/seo';
 import { CodeBlock, ParagraphPlaceholder, Title } from '../../components/ui';
 
-// theme
-if (!localStorage.getItem('theme')) {
-  localStorage.setItem('theme', 'light');
+if (!window) {
+  if (!localStorage.getItem('theme')) {
+    localStorage.setItem('theme', 'light');
+  }
 }
 
+// theme
 const initialTheme: Theme =
   localStorage.getItem('theme') === 'light' ? Theme.light : Theme.dark;
 
