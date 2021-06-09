@@ -13,10 +13,6 @@ import SEO from '../../components/seo';
 import { CodeBlock, ParagraphPlaceholder, Title } from '../../components/ui';
 
 export default function HomeTemplate(): JSX.Element {
-  // theme
-  const initialTheme: Theme =
-    localStorage.getItem('theme') === 'light' ? Theme.light : Theme.dark;
-
   const data: SanityPages = homeQuery();
 
   const { code, id, title, _rawContent } = data;
@@ -24,6 +20,8 @@ export default function HomeTemplate(): JSX.Element {
   const { language, setTheme } = useContext<IContext>(MainContext);
 
   useEffect(() => {
+    const initialTheme: Theme =
+      localStorage.getItem('theme') === 'light' ? Theme.light : Theme.dark;
     setTheme(initialTheme);
   }, []);
 
