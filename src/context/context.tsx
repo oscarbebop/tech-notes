@@ -74,6 +74,10 @@ export function MainProvider(props: IProps): JSX.Element {
     });
   };
 
+  const setTheme = (theme: Theme): void => {
+    dispatch({ type: ContextTypes.SET_THEME, payload: theme });
+  };
+
   const setURL = (url: string): void => {
     dispatch({ type: ContextTypes.SET_URL, payload: url });
   };
@@ -93,6 +97,7 @@ export function MainProvider(props: IProps): JSX.Element {
         changeTheme,
         handleSidebar,
         setSearchValue,
+        setTheme,
         setURL
       }}
     >

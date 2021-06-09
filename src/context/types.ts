@@ -13,6 +13,7 @@ export enum ContextTypes {
   CHANGE_SEARCH_VALUE = 'CHANGE_SEARCH_VALUE',
   CHANGE_THEME = 'CHANGE_THEME',
   HANDLE_SIDEBAR = 'HANDLE_SIDEBAR',
+  SET_THEME = 'SET_THEME',
   SET_URL = 'SET_URL'
 }
 
@@ -34,6 +35,7 @@ export interface IContext {
   changeTheme: () => void;
   handleSidebar: (ItIsActive: boolean) => void;
   setSearchValue: (value: string) => void;
+  setTheme: (theme: Theme) => void;
   setURL: (url: string) => void;
 }
 

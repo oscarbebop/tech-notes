@@ -32,6 +32,12 @@ export default function Reducer(
         ...state,
         activeSidebar: action.payload
       };
+    case ContextTypes.SET_THEME:
+      return {
+        ...state,
+        theme: action.payload,
+        themeColor: state.theme === Theme.light ? lightTheme : darkTheme
+      };
     case ContextTypes.SET_URL:
       return {
         ...state,

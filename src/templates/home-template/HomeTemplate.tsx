@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 
 import MainContext from '../../context/context';
-import { IContext } from '../../context/types';
+import { IContext, Theme } from '../../context/types';
 
 import { homeQuery } from '../../gql/home';
 import { SanityPages } from '../../graphqlTypes';
@@ -12,12 +12,24 @@ import Layout from '../../components/layout';
 import SEO from '../../components/seo';
 import { CodeBlock, ParagraphPlaceholder, Title } from '../../components/ui';
 
+// theme
+if (!localStorage.getItem('theme')) {
+  localStorage.setItem('theme', 'light');
+}
+
+const initialTheme: Theme =
+  localStorage.getItem('theme') === 'light' ? Theme.light : Theme.dark;
+
 export default function HomeTemplate(): JSX.Element {
   const data: SanityPages = homeQuery();
 
   const { code, id, title, _rawContent } = data;
 
-  const { language } = useContext<IContext>(MainContext);
+  const { language, setTheme } = useContext<IContext>(MainContext);
+
+  useEffect(() => {
+    setTheme(initialTheme);
+  }, []);
 
   return (
     <>
