@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { animations, shadows } from '../../constants';
+import { animations, colors, shadows } from '../../constants';
 
 export const Container = styled.div<{ ItIsActive: boolean }>`
   display: flex;
@@ -12,11 +12,17 @@ export const Container = styled.div<{ ItIsActive: boolean }>`
   ${({ ItIsActive }) => (ItIsActive ? 'left: 0;' : 'left: -230px;')}
 `;
 
-export const SidebarContainer = styled.aside<{ ItIsActive: boolean }>`
+interface ISidebar {
+  ItIsActive: boolean;
+  isTheThemeDark: boolean;
+}
+
+export const SidebarContainer = styled.aside<ISidebar>`
   width: 230px;
   height: 100%;
   padding: 30px 10px 30px 30px;
-  background-color: ${({ theme }) => theme.backgroundColor};
+  background-color: ${({ isTheThemeDark }) =>
+    isTheThemeDark ? colors.dark : colors.white};
   transition: ${animations.normal};
   z-index: 2;
   ${({ ItIsActive }) =>

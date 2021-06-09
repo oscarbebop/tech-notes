@@ -55,7 +55,10 @@ export default function Sidebar(): JSX.Element {
 
   return (
     <Container ItIsActive={activeSidebar}>
-      <SidebarContainer ItIsActive={activeSidebar}>
+      <SidebarContainer
+        ItIsActive={activeSidebar}
+        isTheThemeDark={isTheThemeDark}
+      >
         <Header />
         <Searcher />
         <Heading>
