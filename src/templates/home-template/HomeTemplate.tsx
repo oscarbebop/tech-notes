@@ -12,17 +12,15 @@ import Layout from '../../components/layout';
 import SEO from '../../components/seo';
 import { CodeBlock, ParagraphPlaceholder, Title } from '../../components/ui';
 
-if (!window) {
+export default function HomeTemplate(): JSX.Element {
   if (!localStorage.getItem('theme')) {
     localStorage.setItem('theme', 'light');
   }
-}
 
-// theme
-const initialTheme: Theme =
-  localStorage.getItem('theme') === 'light' ? Theme.light : Theme.dark;
+  // theme
+  const initialTheme: Theme =
+    localStorage.getItem('theme') === 'light' ? Theme.light : Theme.dark;
 
-export default function HomeTemplate(): JSX.Element {
   const data: SanityPages = homeQuery();
 
   const { code, id, title, _rawContent } = data;
