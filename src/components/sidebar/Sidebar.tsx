@@ -53,6 +53,10 @@ export default function Sidebar(): JSX.Element {
   const english: boolean = language === Lang.EN;
   const isTheThemeDark = theme === Theme.dark;
 
+  console.log('================');
+  console.log(isTheThemeDark);
+  console.log('================');
+
   return (
     <Container ItIsActive={activeSidebar}>
       <SidebarContainer
