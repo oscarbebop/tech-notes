@@ -53,10 +53,6 @@ export default function Sidebar(): JSX.Element {
   const english: boolean = language === Lang.EN;
   const isTheThemeDark = theme === Theme.dark;
 
-  console.log('================');
-  console.log(isTheThemeDark);
-  console.log('================');
-
   return (
     <Container ItIsActive={activeSidebar}>
       <SidebarContainer ItIsActive={activeSidebar}>
@@ -82,7 +78,6 @@ export default function Sidebar(): JSX.Element {
         ItIsActive={activeSidebar}
         onClick={() => handleSidebar(!activeSidebar)}
       >
-        {console.log(isTheThemeDark ? colors.white : colors.dark)}
         <Arrow color={isTheThemeDark ? colors.white : colors.dark} size="2em" />
       </SidebarButton>
     </Container>

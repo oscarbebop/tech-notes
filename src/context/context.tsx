@@ -1,4 +1,4 @@
-import React, { createContext, useReducer } from 'react';
+import React, { createContext, useEffect, useReducer } from 'react';
 
 import { darkTheme, lightTheme } from '../themes';
 import { CategoryFilter, ContextTypes, Lang, Theme } from './types';
@@ -81,6 +81,10 @@ export function MainProvider(props: IProps): JSX.Element {
   const setURL = (url: string): void => {
     dispatch({ type: ContextTypes.SET_URL, payload: url });
   };
+
+  useEffect(() => {
+    setTheme(initialTheme);
+  }, []);
 
   return (
     <MainContext.Provider
