@@ -13,10 +13,6 @@ import SEO from '../../components/seo';
 import { CodeBlock, ParagraphPlaceholder, Title } from '../../components/ui';
 
 export default function HomeTemplate(): JSX.Element {
-  if (typeof window !== 'undefined') {
-    localStorage.setItem('theme', 'light');
-  }
-
   // theme
   const initialTheme: Theme =
     localStorage.getItem('theme') === 'light' ? Theme.light : Theme.dark;
