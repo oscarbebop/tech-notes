@@ -82,6 +82,7 @@ export default function Sidebar(): JSX.Element {
         ItIsActive={activeSidebar}
         onClick={() => handleSidebar(!activeSidebar)}
       >
+        {isTheThemeDark ? colors.white : colors.dark}
         <Arrow color={isTheThemeDark ? colors.white : colors.dark} size="2em" />
       </SidebarButton>
     </Container>
