@@ -25,11 +25,12 @@ export default function HomeTemplate(): JSX.Element {
 
   return (
     <>
-      {!data ? (
+      {!data && (
         <Layout>
           <ParagraphPlaceholder />
         </Layout>
-      ) : (
+      )}
+      {data && (
         <>
           <SEO title="Home" />
           <Layout>
