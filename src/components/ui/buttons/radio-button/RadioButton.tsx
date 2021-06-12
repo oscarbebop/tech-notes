@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'gatsby';
 
 import MainContext from '../../../../context/context';
@@ -22,6 +22,12 @@ export default function RadioButton(props: IProps): JSX.Element {
 
   const color = theme === Theme.light ? `${colors.dark}` : `${colors.white}`;
 
+  const [key, setKey] = useState<undefined | string>(undefined);
+
+  useEffect(() => {
+    setKey(localStorage.getItem('language'));
+  }, []);
+
   return (
     <Container>
       <Large>{languageName}</Large>
@@ -31,7 +37,7 @@ export default function RadioButton(props: IProps): JSX.Element {
         to={`/${languageName}/${url}`}
       >
         <Circle>
-          <Bullet activeColor={color} active={languageName === language} />
+          <Bullet activeColor={color} active={languageName === key} />
         </Circle>
       </Link>
     </Container>
