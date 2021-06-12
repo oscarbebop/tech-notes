@@ -39,12 +39,6 @@ export default function CodeBlock(props: IProps): JSX.Element {
 
   const copyText = language === Lang.EN ? 'Copied' : 'Copiado';
 
-  const [localTheme, setLocalTheme] = useState<undefined | string>(undefined);
-
-  useEffect(() => {
-    setLocalTheme(localStorage.getItem('theme'));
-  }, [theme]);
-
   useEffect(() => {
     if (showPopUp) {
       setTimeout(() => {
@@ -53,7 +47,7 @@ export default function CodeBlock(props: IProps): JSX.Element {
     }
   }, [showPopUp]);
 
-  const isTheLocalThemeWhite: boolean = localTheme === 'light';
+  const isTheLocalThemeWhite: boolean = theme === 'light';
 
   return (
     <>
