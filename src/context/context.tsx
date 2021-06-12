@@ -86,7 +86,7 @@ export function MainProvider(props: IProps): JSX.Element {
     const initialLanguage2: Lang =
       localStorage.getItem('language') === 'en' ? Lang.EN : Lang.ES;
     changeLanguage(initialLanguage2);
-  }, [state]);
+  }, []);
 
   return (
     <MainContext.Provider

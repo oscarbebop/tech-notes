@@ -5,7 +5,7 @@ import MainContext from '../../../../context/context';
 import { IContext, Theme } from '../../../../context/types';
 
 import { colors } from '../../../../constants';
-import { Large, LinePlaceholder } from '../../../ui';
+import { Large } from '../../../ui';
 import { Bullet, Circle, Container } from './RadioButton.styles';
 
 interface IProps {
