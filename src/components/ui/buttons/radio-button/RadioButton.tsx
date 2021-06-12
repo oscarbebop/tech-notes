@@ -30,17 +30,21 @@ export default function RadioButton(props: IProps): JSX.Element {
   console.log('================');
 
   return (
-    <Container>
-      <Large>{languageName}</Large>
-      <Link
-        aria-label={languageName}
-        onClick={() => handleLanguage(languageName)}
-        to={`/${languageName}/${url}`}
-      >
-        <Circle>
-          <Bullet activeColor={color} active={languageName === language} />
-        </Circle>
-      </Link>
-    </Container>
+    <>
+      {algo && (
+        <Container>
+          <Large>{languageName}</Large>
+          <Link
+            aria-label={languageName}
+            onClick={() => handleLanguage(languageName)}
+            to={`/${languageName}/${url}`}
+          >
+            <Circle>
+              <Bullet activeColor={color} active={languageName === algo} />
+            </Circle>
+          </Link>
+        </Container>
+      )}
+    </>
   );
 }
