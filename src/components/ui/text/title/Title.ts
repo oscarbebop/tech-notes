@@ -7,7 +7,6 @@ const Title = styled.h1<IText>`
   font-size: ${fontStyles.fontSize.title};
   margin-bottom: 10px;
   color: ${({ theme }) => theme.textColor};
-  color: ${({ color }) => color};
   transition: ${animations.fast};
 `;
 
