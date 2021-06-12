@@ -21,13 +21,13 @@ export default function ThemeButton(): JSX.Element {
     changeTheme();
     localStorage.setItem(
       'theme',
-      isTheLocalThemeWhite ? Theme.dark : Theme.light
+      isTheGlobalThemeWhite ? Theme.dark : Theme.light
     );
   };
 
   return (
     <Container aria-label="theme button" onClick={handleTheme}>
-      <Notch isTheThemeWhite={isTheGlobalThemeWhite} />
+      <Notch isTheThemeWhite={isTheLocalThemeWhite} />
     </Container>
   );
 }
