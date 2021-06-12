@@ -4,11 +4,14 @@ import { darkTheme, lightTheme } from '../themes';
 import { CategoryFilter, ContextTypes, Lang, Theme } from './types';
 import Reducer from './reducer';
 
+const algo =
+  typeof window !== 'undefined' && window.localStorage.getItem('language');
+
 const defaultState: any = {
   activeSidebar: true,
   category: CategoryFilter.all,
   currentURL: null,
-  language: Lang.EN,
+  language: algo,
   searchValue: null,
   theme: Theme.light,
   themeColor: lightTheme
