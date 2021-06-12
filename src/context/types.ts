@@ -35,7 +35,7 @@ export interface IContext {
   changeTheme: () => void;
   handleSidebar: (ItIsActive: boolean) => void;
   setSearchValue: (value: string) => void;
-  setTheme: (theme: Theme) => void;
+  setTheme: (theme: string) => void;
   setURL: (url: string) => void;
 }
 

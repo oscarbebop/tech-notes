@@ -58,7 +58,7 @@ export default function CodeBlock(props: IProps): JSX.Element {
   return (
     <>
       <CodeContainer isTheThemeWhite={lightTheme}>
-        <CodeHeader isTheThemeWhite={isTheLocalThemeWhite}>
+        <CodeHeader>
           <IconButton
             isActive={showPopUp}
             type="button"

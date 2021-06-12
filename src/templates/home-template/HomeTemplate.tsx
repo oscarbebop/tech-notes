@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import MainContext from '../../context/context';
 import { IContext, Theme } from '../../context/types';
@@ -17,7 +17,14 @@ export default function HomeTemplate(): JSX.Element {
 
   const { code, id, title, _rawContent } = data;
 
-  const { language } = useContext<IContext>(MainContext);
+  const { language, setTheme } = useContext<IContext>(MainContext);
+
+  const [localTheme, setLocalTheme] = useState<undefined | string>(undefined);
+
+  useEffect(() => {
+    setLocalTheme(localStorage.getItem('theme'));
+    setTheme(localTheme);
+  }, []);
 
   return (
     <>
