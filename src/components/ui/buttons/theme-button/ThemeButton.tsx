@@ -21,6 +21,10 @@ export default function ThemeButton(): JSX.Element {
     localStorage.setItem('theme', isTheThemeWhite ? Theme.dark : Theme.light);
   };
 
+  console.log('================');
+  console.log(localTheme);
+  console.log('================');
+
   return (
     <Container aria-label="theme button" onClick={handleTheme}>
       <Notch isTheThemeWhite={isTheThemeWhite} />
