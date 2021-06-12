@@ -30,17 +30,15 @@ export default function LanguageButton(): JSX.Element {
   return (
     <Container>
       <World size="1.5em" color={isTheThemeDark ? colors.white : colors.dark} />
-      {data.length === 0 ? (
-        <LinePlaceholder width="70%" height="20px" />
-      ) : (
+      {!data && <LinePlaceholder width="70%" height="20px" />}
+      {data &&
         data.map((element: SanityLanguages) => (
           <RadioButton
             key={element.id}
             handleLanguage={handleLanguage}
             languageName={element.language}
           />
-        ))
-      )}
+        ))}
     </Container>
   );
 }

@@ -19,10 +19,6 @@ export default function HomeTemplate(): JSX.Element {
 
   const { language } = useContext<IContext>(MainContext);
 
-  console.log('================');
-  console.log(data);
-  console.log('================');
-
   return (
     <>
       {!data && (
