@@ -26,7 +26,7 @@ export default function HomeTemplate(): JSX.Element {
           <ParagraphPlaceholder />
         </Layout>
       )}
-      {/* {data && (
+      {data && (
         <>
           <SEO title="Home" />
           <Layout>
@@ -35,7 +35,7 @@ export default function HomeTemplate(): JSX.Element {
             <CodeBlock code={code[0].code} technology="javascript" />
           </Layout>
         </>
-      )} */}
+      )}
     </>
   );
 }
