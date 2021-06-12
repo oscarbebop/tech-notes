@@ -16,16 +16,17 @@ interface IProps {
 export default function RadioButton(props: IProps): JSX.Element {
   const { handleLanguage, languageName } = props;
 
-  const { language, currentURL, theme } = useContext<IContext>(MainContext);
+  const { currentURL, theme } = useContext<IContext>(MainContext);
 
   const url: string = currentURL || '';
 
   const color = theme === Theme.light ? `${colors.dark}` : `${colors.white}`;
 
-  const [key, setKey] = useState<undefined | string>(undefined);
+  const [localLanguage, setLocalLanguage] =
+    useState<undefined | string>(undefined);
 
   useEffect(() => {
-    setKey(localStorage.getItem('language'));
+    setLocalLanguage(localStorage.getItem('language'));
   }, []);
 
   return (
@@ -37,7 +38,7 @@ export default function RadioButton(props: IProps): JSX.Element {
         to={`/${languageName}/${url}`}
       >
         <Circle>
-          <Bullet activeColor={color} active={languageName === key} />
+          <Bullet activeColor={color} active={languageName === localLanguage} />
         </Circle>
       </Link>
     </Container>

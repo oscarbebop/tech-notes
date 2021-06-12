@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import MainContext from '../../../../context/context';
 import { IContext, Theme } from '../../../../context/types';
@@ -6,9 +6,15 @@ import { IContext, Theme } from '../../../../context/types';
 import { Container, Notch } from './ThemeButton.styles';
 
 export default function ThemeButton(): JSX.Element {
-  const { theme, changeTheme } = useContext<IContext>(MainContext);
+  const { changeTheme } = useContext<IContext>(MainContext);
 
-  const isTheThemeWhite: boolean = theme === 'light';
+  const [localTheme, setLocalTheme] = useState<undefined | string>(undefined);
+
+  useEffect(() => {
+    setLocalTheme(localStorage.getItem('theme'));
+  }, []);
+
+  const isTheThemeWhite: boolean = localTheme === 'light';
 
   const handleTheme = (): void => {
     changeTheme();
