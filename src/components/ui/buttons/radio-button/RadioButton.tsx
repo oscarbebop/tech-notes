@@ -22,27 +22,18 @@ export default function RadioButton(props: IProps): JSX.Element {
 
   const color = theme === Theme.light ? `${colors.dark}` : `${colors.white}`;
 
-  const algo =
-    typeof window !== 'undefined' && window.localStorage.getItem('language');
-
   return (
-    <>
-      {!algo ? (
-        <LinePlaceholder width="50px" height="20px" />
-      ) : (
-        <Container>
-          <Large>{languageName}</Large>
-          <Link
-            aria-label={languageName}
-            onClick={() => handleLanguage(languageName)}
-            to={`/${languageName}/${url}`}
-          >
-            <Circle>
-              <Bullet activeColor={color} active={languageName === algo} />
-            </Circle>
-          </Link>
-        </Container>
-      )}
-    </>
+    <Container>
+      <Large>{languageName}</Large>
+      <Link
+        aria-label={languageName}
+        onClick={() => handleLanguage(languageName)}
+        to={`/${languageName}/${url}`}
+      >
+        <Circle>
+          <Bullet activeColor={color} active={languageName === language} />
+        </Circle>
+      </Link>
+    </Container>
   );
 }
