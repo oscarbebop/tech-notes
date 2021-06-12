@@ -5,7 +5,7 @@ import { animations, colors, shadows } from '../../../constants';
 export const CodeContainer = styled.div<{ isTheThemeWhite: boolean }>`
   width: 100%;
   border-radius: 5px;
-  background-color: ${({ theme }) => theme.codeEditorBackground};
+
   display: flex;
   flex-direction: column;
   transition: ${animations.normal};

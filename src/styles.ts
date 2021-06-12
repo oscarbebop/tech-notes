@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-import { animations, fontStyles } from './constants';
+import { animations, colors, fontStyles } from './constants';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -70,8 +70,12 @@ const GlobalStyle = createGlobalStyle`
     background-size: 800px 104px;
   }
 
-  pre {
+  .code_container {
     background-color: ${({ theme }) => theme.codeEditorBackground};
+  }
+
+  pre {
+    background-color: ${colors.transparent} !important;
   }
 
 `;
