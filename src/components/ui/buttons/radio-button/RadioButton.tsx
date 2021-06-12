@@ -27,8 +27,8 @@ export default function RadioButton(props: IProps): JSX.Element {
 
   return (
     <>
-      {algo ? (
-        <LinePlaceholder width="90%" height="100%" />
+      {!algo ? (
+        <LinePlaceholder width="50px" height="20px" />
       ) : (
         <Container>
           <Large>{languageName}</Large>
