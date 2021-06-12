@@ -70,6 +70,10 @@ const GlobalStyle = createGlobalStyle`
     background-size: 800px 104px;
   }
 
+  pre {
+    background-color: ${({ theme }) => theme.codeEditorBackground};
+  }
+
 `;
 
 export default GlobalStyle;

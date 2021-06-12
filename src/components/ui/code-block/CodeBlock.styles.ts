@@ -14,10 +14,6 @@ export const CodeContainer = styled.div<{ isTheThemeWhite: boolean }>`
 
   pre {
     transition: ${animations.normal};
-    ${({ isTheThemeWhite }) =>
-      isTheThemeWhite
-        ? `background-color: ${colors.lightGray} !important;`
-        : `background-color: ${colors.dark} !important;`}
   }
 `;
 

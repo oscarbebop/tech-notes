@@ -47,8 +47,6 @@ export default function CodeBlock(props: IProps): JSX.Element {
     }
   }, [showPopUp]);
 
-  const isTheLocalThemeWhite: boolean = theme === 'light';
-
   return (
     <>
       <CodeContainer isTheThemeWhite={lightTheme}>
@@ -64,7 +62,7 @@ export default function CodeBlock(props: IProps): JSX.Element {
         </CodeHeader>
         <SyntaxHighlighter
           language={technology}
-          style={isTheLocalThemeWhite ? xcode : atomOneDark}
+          style={lightTheme ? xcode : atomOneDark}
         >
           {code}
         </SyntaxHighlighter>
