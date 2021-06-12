@@ -25,6 +25,10 @@ export default function RadioButton(props: IProps): JSX.Element {
   const algo =
     typeof window !== 'undefined' && window.localStorage.getItem('language');
 
+  console.log('================');
+  console.log(algo);
+  console.log('================');
+
   return (
     <Container>
       <Large>{languageName}</Large>
@@ -34,7 +38,7 @@ export default function RadioButton(props: IProps): JSX.Element {
         to={`/${languageName}/${url}`}
       >
         <Circle>
-          <Bullet activeColor={color} active={languageName === algo} />
+          <Bullet activeColor={color} active={languageName === language} />
         </Circle>
       </Link>
     </Container>
