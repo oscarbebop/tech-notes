@@ -12,7 +12,7 @@ export default function ThemeButton(): JSX.Element {
 
   useEffect(() => {
     setLocalTheme(localStorage.getItem('theme'));
-  }, []);
+  }, [theme]);
 
   const isTheLocalThemeWhite: boolean = localTheme === 'light';
   const isTheGlobalThemeWhite: boolean = theme === 'light';
@@ -27,7 +27,7 @@ export default function ThemeButton(): JSX.Element {
 
   return (
     <Container aria-label="theme button" onClick={handleTheme}>
-      <Notch isTheThemeWhite={isTheGlobalThemeWhite} />
+      <Notch isTheThemeWhite={isTheLocalThemeWhite} />
     </Container>
   );
 }
