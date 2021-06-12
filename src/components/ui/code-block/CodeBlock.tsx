@@ -30,14 +30,6 @@ export default function CodeBlock(props: IProps): JSX.Element {
 
   const [showPopUp, setShowPopUp] = useState<boolean>(false);
 
-  useEffect(() => {
-    if (showPopUp) {
-      setTimeout(() => {
-        setShowPopUp(false);
-      }, 2000);
-    }
-  }, [showPopUp]);
-
   const lightTheme: boolean = theme === 'light';
 
   const handleCopyButton = (): void => {
@@ -47,10 +39,26 @@ export default function CodeBlock(props: IProps): JSX.Element {
 
   const copyText = language === Lang.EN ? 'Copied' : 'Copiado';
 
+  const [localTheme, setLocalTheme] = useState<undefined | string>(undefined);
+
+  useEffect(() => {
+    setLocalTheme(localStorage.getItem('theme'));
+  }, [theme]);
+
+  useEffect(() => {
+    if (showPopUp) {
+      setTimeout(() => {
+        setShowPopUp(false);
+      }, 2000);
+    }
+  }, [showPopUp]);
+
+  const isTheLocalThemeWhite: boolean = localTheme === 'light';
+
   return (
     <>
       <CodeContainer isTheThemeWhite={lightTheme}>
-        <CodeHeader>
+        <CodeHeader isTheThemeWhite={isTheLocalThemeWhite}>
           <IconButton
             isActive={showPopUp}
             type="button"
@@ -62,7 +70,7 @@ export default function CodeBlock(props: IProps): JSX.Element {
         </CodeHeader>
         <SyntaxHighlighter
           language={technology}
-          style={lightTheme ? xcode : atomOneDark}
+          style={isTheLocalThemeWhite ? xcode : atomOneDark}
         >
           {code}
         </SyntaxHighlighter>

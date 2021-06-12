@@ -21,10 +21,11 @@ export const CodeContainer = styled.div<{ isTheThemeWhite: boolean }>`
   }
 `;
 
-export const CodeHeader = styled.div`
+export const CodeHeader = styled.div<{ isTheThemeWhite: boolean }>`
   width: 100%;
   height: 40px;
-  background-color: ${({ theme }) => theme.codeHeaderColor};
+  background-color: ${({ isTheThemeWhite }) =>
+    isTheThemeWhite ? `${colors.mediumGray}` : `${colors.darkLight}`};
   border-radius: 5px 5px 0px 0px;
   padding: 0 10px;
   display: flex;
