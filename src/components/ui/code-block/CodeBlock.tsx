@@ -47,16 +47,10 @@ export default function CodeBlock(props: IProps): JSX.Element {
     }
   }, [showPopUp]);
 
-  const [localTheme, setLocalTheme] = useState<undefined | string>(undefined);
-
-  useEffect(() => {
-    setLocalTheme(localStorage.getItem('theme'));
-  }, []);
-
   return (
     <>
       <CodeContainer className="code_container" isTheThemeWhite={lightTheme}>
-        <CodeHeader>
+        <CodeHeader className="code_header">
           <IconButton
             isActive={showPopUp}
             type="button"
@@ -68,7 +62,7 @@ export default function CodeBlock(props: IProps): JSX.Element {
         </CodeHeader>
         <SyntaxHighlighter
           language={technology}
-          style={localTheme === 'light' ? xcode : atomOneDark}
+          style={lightTheme ? xcode : atomOneDark}
         >
           {code}
         </SyntaxHighlighter>

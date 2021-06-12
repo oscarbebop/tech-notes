@@ -20,7 +20,6 @@ export const CodeContainer = styled.div<{ isTheThemeWhite: boolean }>`
 export const CodeHeader = styled.div`
   width: 100%;
   height: 40px;
-  background-color: ${({ theme }) => theme.codeHeaderColor};
   border-radius: 5px 5px 0px 0px;
   padding: 0 10px;
   display: flex;

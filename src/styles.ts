@@ -74,6 +74,10 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${({ theme }) => theme.codeEditorBackground};
   }
 
+  .code_header {
+    background-color: ${({ theme }) => theme.codeHeaderColor};
+  }
+
   pre {
     background-color: ${colors.transparent} !important;
   }
