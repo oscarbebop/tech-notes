@@ -57,15 +57,20 @@ const GlobalStyle = createGlobalStyle`
 
   .background {
     background-color: ${({ theme }) => theme.backgroundColor};
-    box-shadow: ${({ theme }) => theme.shadow};
   }
 
   .code_background {
     background-color: ${({ theme }) => theme.codeEditorBackground};
+    box-shadow: ${({ theme }) => theme.onlyShadowOnDarkTheme};
   }
 
   .code_header_background {
     background-color: ${({ theme }) => theme.codeHeaderColor};
+  }
+
+  .sidebar_background {
+    background-color: ${({ theme }) => theme.backgroundColor};
+    background-color: ${({ theme }) => theme.onlyShadowOnWhiteTheme};
   }
 
   @keyframes placeHolderAnimation {

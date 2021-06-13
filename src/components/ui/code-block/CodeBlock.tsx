@@ -53,6 +53,8 @@ export default function CodeBlock(props: IProps): JSX.Element {
     setLocalTheme(localStorage.getItem('theme'));
   }, [theme]);
 
+  const dinamicTheme: boolean = localTheme === 'light';
+
   return (
     <>
       <CodeContainer className="code_background" isTheThemeWhite={lightTheme}>
@@ -68,7 +70,7 @@ export default function CodeBlock(props: IProps): JSX.Element {
         </CodeHeader>
         <SyntaxHighlighter
           language={technology}
-          style={localTheme ? xcode : atomOneDark}
+          style={dinamicTheme ? xcode : atomOneDark}
         >
           {code}
         </SyntaxHighlighter>

@@ -8,6 +8,8 @@ declare module 'styled-components' {
     codeEditorBackground: string;
     callToAction: string;
     gradient: string;
+    onlyShadowOnWhiteTheme: string;
+    onlyShadowOnDarkTheme: string;
     shadow: string;
   }
 }

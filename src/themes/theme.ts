@@ -8,6 +8,8 @@ export const darkTheme: IThemeColors = {
   codeEditorBackground: colors.dark,
   callToAction: colors.aqua,
   gradient: gradients.dark,
+  onlyShadowOnDarkTheme: shadows.dark,
+  onlyShadowOnWhiteTheme: 'none',
   shadow: shadows.dark
 };
 
@@ -18,5 +20,7 @@ export const lightTheme: IThemeColors = {
   codeEditorBackground: colors.lightGray,
   callToAction: colors.dark,
   gradient: gradients.white,
+  onlyShadowOnDarkTheme: 'none',
+  onlyShadowOnWhiteTheme: shadows.normal,
   shadow: shadows.normal
 };
