@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { animations, colors, shadows } from '../../constants';
+import { animations } from '../../constants';
 
 export const Container = styled.div<{ ItIsActive: boolean }>`
   display: flex;
@@ -9,6 +9,7 @@ export const Container = styled.div<{ ItIsActive: boolean }>`
   position: fixed;
   top: 0;
   ${({ ItIsActive }) => (ItIsActive ? 'left: 0;' : 'left: -230px;')}
+  transition: ${animations.slow};
 `;
 
 interface ISidebar {
