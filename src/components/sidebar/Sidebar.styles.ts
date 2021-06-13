@@ -29,7 +29,6 @@ export const SidebarButton = styled.button<{ ItIsActive: boolean }>`
   height: 35px;
   outline: none;
   border: none;
-  background-color: ${({ theme }) => theme.backgroundColor};
   border-radius: 0px 5px 5px 0px;
   cursor: pointer;
   display: flex;

@@ -9,10 +9,6 @@ const LinkText = styled.p<IText>`
   color: ${({ color }) => color};
   transition: ${animations.fast};
   cursor: pointer;
-
-  &:hover {
-    color: ${({ theme }) => theme.callToAction};
-  }
 `;
 
 export default LinkText;

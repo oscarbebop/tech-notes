@@ -48,6 +48,11 @@ const GlobalStyle = createGlobalStyle`
     line-height: 20px;
   }
 
+  a p:hover {
+    color: ${({ theme }) => theme.callToAction};
+  }
+
+
   option {
     color: black;
   }
