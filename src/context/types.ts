@@ -58,6 +58,8 @@ export interface IThemeColors {
   gradient: string;
   onlyShadowOnWhiteTheme: string;
   onlyShadowOnDarkTheme: string;
+  searchBackground: string;
+  searchBorder: string;
   shadow: string;
 }
 

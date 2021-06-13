@@ -39,7 +39,6 @@ export const SidebarButton = styled.button<{ ItIsActive: boolean }>`
   justify-content: center;
   align-items: center;
   transition: ${animations.normal};
-  box-shadow: ${({ theme }) => theme.shadow};
 
   svg {
     transition: ${animations.slow};

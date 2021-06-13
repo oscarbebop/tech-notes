@@ -10,6 +10,8 @@ declare module 'styled-components' {
     gradient: string;
     onlyShadowOnWhiteTheme: string;
     onlyShadowOnDarkTheme: string;
+    searchBackground: string;
+    searchBorder: string;
     shadow: string;
   }
 }

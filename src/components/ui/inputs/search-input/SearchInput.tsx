@@ -12,10 +12,9 @@ export default function SearchInput(): JSX.Element {
   const { language, setSearchValue, theme } = useContext<IContext>(MainContext);
 
   const english: boolean = language === Lang.EN;
-  const isTheThemeDark = theme === Theme.dark;
 
   return (
-    <Container isTheThemeDark={isTheThemeDark}>
+    <Container className="search_background">
       <Search size="1.5em" color={colors.gray} />
       <Input
         type="text"

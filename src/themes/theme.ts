@@ -10,6 +10,8 @@ export const darkTheme: IThemeColors = {
   gradient: gradients.dark,
   onlyShadowOnDarkTheme: shadows.dark,
   onlyShadowOnWhiteTheme: 'none',
+  searchBackground: colors.semiDark,
+  searchBorder: colors.semiDark,
   shadow: shadows.dark
 };
 
@@ -22,5 +24,7 @@ export const lightTheme: IThemeColors = {
   gradient: gradients.white,
   onlyShadowOnDarkTheme: 'none',
   onlyShadowOnWhiteTheme: shadows.normal,
+  searchBackground: colors.white,
+  searchBorder: colors.lightGray,
   shadow: shadows.normal
 };

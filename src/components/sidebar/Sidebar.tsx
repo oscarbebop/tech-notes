@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import MainContext from '../../context/context';
 import { IContext, Lang, Theme } from '../../context/types';
@@ -53,6 +53,14 @@ export default function Sidebar(): JSX.Element {
   const english: boolean = language === Lang.EN;
   const isTheThemeDark = theme === Theme.dark;
 
+  const [localTheme, setLocalTheme] = useState<undefined | string>(undefined);
+
+  useEffect(() => {
+    setLocalTheme(localStorage.getItem('theme'));
+  }, [theme]);
+
+  const dinamicTheme: boolean = localTheme === 'light';
+
   return (
     <Container ItIsActive={activeSidebar}>
       <SidebarContainer
@@ -82,7 +90,7 @@ export default function Sidebar(): JSX.Element {
         ItIsActive={activeSidebar}
         onClick={() => handleSidebar(!activeSidebar)}
       >
-        <Arrow color={isTheThemeDark ? colors.white : colors.dark} size="2em" />
+        <Arrow color={dinamicTheme ? colors.white : colors.dark} size="2em" />
       </SidebarButton>
     </Container>
   );

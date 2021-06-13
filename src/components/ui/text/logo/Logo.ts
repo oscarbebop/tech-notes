@@ -10,7 +10,6 @@ interface ILogo {
 const Logo = styled.h2<ILogo>`
   font-size: ${fontStyles.fontSize.logo};
   transition: ${animations.normal};
-  color: ${({ theme }) => theme.textColor};
 
   &:before {
     content: '// ';

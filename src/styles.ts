@@ -68,9 +68,19 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${({ theme }) => theme.codeHeaderColor};
   }
 
+  .search_background {
+    background-color: ${({ theme }) => theme.searchBackground};
+    border: 1px solid ${({ theme }) => theme.searchBorder};
+  }
+
   .sidebar_background {
     background-color: ${({ theme }) => theme.backgroundColor};
-    background-color: ${({ theme }) => theme.onlyShadowOnWhiteTheme};
+    box-shadow: ${({ theme }) => theme.onlyShadowOnWhiteTheme};
+  }
+
+  .sidebar_background_button {
+    background-color: ${({ theme }) => theme.backgroundColor};
+    box-shadow: ${({ theme }) => theme.shadow};
   }
 
   @keyframes placeHolderAnimation {
