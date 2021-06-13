@@ -24,6 +24,7 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
+    color: ${({ theme }) => theme.textColor};
   }
 
   p {
@@ -55,10 +56,6 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${colors.transparent} !important;
   }
 
-  .background {
-    background-color: ${({ theme }) => theme.backgroundColor};
-  }
-
   .code_background {
     background-color: ${({ theme }) => theme.codeEditorBackground};
     box-shadow: ${({ theme }) => theme.onlyShadowOnDarkTheme};
@@ -66,6 +63,10 @@ const GlobalStyle = createGlobalStyle`
 
   .code_header_background {
     background-color: ${({ theme }) => theme.codeHeaderColor};
+  }
+
+  .option {
+   border: 1px solid ${({ theme }) => theme.textColor};
   }
 
   .search_background {
@@ -81,6 +82,21 @@ const GlobalStyle = createGlobalStyle`
   .sidebar_background_button {
     background-color: ${({ theme }) => theme.backgroundColor};
     box-shadow: ${({ theme }) => theme.shadow};
+  }
+
+  .technology_selector_background {
+    background-color: ${({ theme }) => theme.backgroundColor};
+    color: ${({ theme }) => theme.textColor};
+    box-shadow: ${({ theme }) => theme.shadow};
+  }
+
+  .toggle {
+    background-color: ${({ theme }) => theme.backgroundColor};
+    box-shadow: ${({ theme }) => theme.shadow};
+  }
+
+  .notch {
+    background-color: ${({ theme }) => theme.callToAction};
   }
 
   @keyframes placeHolderAnimation {

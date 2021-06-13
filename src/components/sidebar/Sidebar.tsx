@@ -71,11 +71,9 @@ export default function Sidebar(): JSX.Element {
         <Header />
         <Searcher />
         <Heading>
-          {!totalCount ? (
-            <LinePlaceholder width="95%" height="20px" />
-          ) : (
-            `${totalCount} ${english ? 'Definitions' : 'Definiciones'}`
-          )}
+          {!totalCount && <LinePlaceholder width="95%" height="20px" />}
+          {totalCount &&
+            `${totalCount} ${english ? 'Definitions' : 'Definiciones'}`}
         </Heading>
         <DefinitionList definitions={nodes} />
         <Selector technologies={technologies} />
@@ -85,12 +83,13 @@ export default function Sidebar(): JSX.Element {
         </SettingsContainer>
       </SidebarContainer>
       <SidebarButton
+        className="sidebar_background_button"
         type="button"
         aria-label="sidebar button"
         ItIsActive={activeSidebar}
         onClick={() => handleSidebar(!activeSidebar)}
       >
-        <Arrow color={dinamicTheme ? colors.white : colors.dark} size="2em" />
+        <Arrow color={dinamicTheme ? colors.dark : colors.white} size="2em" />
       </SidebarButton>
     </Container>
   );

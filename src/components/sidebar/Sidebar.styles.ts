@@ -8,7 +8,6 @@ export const Container = styled.div<{ ItIsActive: boolean }>`
   height: 100%;
   position: fixed;
   top: 0;
-  transition: ${animations.slow};
   ${({ ItIsActive }) => (ItIsActive ? 'left: 0;' : 'left: -230px;')}
 `;
 
@@ -23,8 +22,6 @@ export const SidebarContainer = styled.aside<ISidebar>`
   padding: 30px 10px 30px 30px;
   transition: ${animations.normal};
   z-index: 2;
-  ${({ ItIsActive }) =>
-    ItIsActive ? `box-shadow: ${shadows.normal};` : `box-shadow: none;`}
 `;
 
 export const SidebarButton = styled.button<{ ItIsActive: boolean }>`

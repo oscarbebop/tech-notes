@@ -26,8 +26,12 @@ export default function ThemeButton(): JSX.Element {
   };
 
   return (
-    <Container aria-label="theme button" onClick={handleTheme}>
-      <Notch isTheThemeWhite={isTheLocalThemeWhite} />
+    <Container
+      aria-label="theme button"
+      className="toggle"
+      onClick={handleTheme}
+    >
+      <Notch className="notch" isTheThemeWhite={isTheLocalThemeWhite} />
     </Container>
   );
 }

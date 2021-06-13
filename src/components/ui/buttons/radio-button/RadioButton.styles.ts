@@ -13,7 +13,6 @@ export const Circle = styled.div`
   height: 12px;
   background-color: ${colors.transparent};
   transition: ${animations.normal};
-  border: 1px solid ${({ theme }) => theme.textColor};
   border-radius: 50%;
   display: flex;
   justify-content: center;

@@ -37,7 +37,7 @@ export default function RadioButton(props: IProps): JSX.Element {
         onClick={() => handleLanguage(languageName)}
         to={`/${languageName}/${url}`}
       >
-        <Circle>
+        <Circle className="option">
           <Bullet activeColor={color} active={languageName === localLanguage} />
         </Circle>
       </Link>

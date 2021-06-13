@@ -23,6 +23,7 @@ export default function Selector(props: IProps): JSX.Element {
     <Select
       defaultValue={category}
       onChange={element => changeCategory(element.target.value)}
+      className="technology_selector_background"
     >
       <option value={CategoryFilter.all}>{allText}</option>
       {technologies.reverse().map((technology: SanityTechnologies) => (
