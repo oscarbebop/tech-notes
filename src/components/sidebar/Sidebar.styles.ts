@@ -21,8 +21,6 @@ export const SidebarContainer = styled.aside<ISidebar>`
   width: 230px;
   height: 100%;
   padding: 30px 10px 30px 30px;
-  /* background-color: ${({ isTheThemeDark }) =>
-    isTheThemeDark ? colors.dark : colors.white}; */
   transition: ${animations.normal};
   z-index: 2;
   ${({ ItIsActive }) =>

@@ -51,6 +51,23 @@ const GlobalStyle = createGlobalStyle`
     color: black;
   }
 
+  pre {
+    background-color: ${colors.transparent} !important;
+  }
+
+  .background {
+    background-color: ${({ theme }) => theme.backgroundColor};
+    box-shadow: ${({ theme }) => theme.shadow};
+  }
+
+  .code_background {
+    background-color: ${({ theme }) => theme.codeEditorBackground};
+  }
+
+  .code_header_background {
+    background-color: ${({ theme }) => theme.codeHeaderColor};
+  }
+
   @keyframes placeHolderAnimation {
     0% {
       background-position: -468px 0;
@@ -69,19 +86,6 @@ const GlobalStyle = createGlobalStyle`
     background: ${({ theme }) => theme.gradient};
     background-size: 800px 104px;
   }
-
-  .code_container {
-    background-color: ${({ theme }) => theme.codeEditorBackground};
-  }
-
-  .code_header {
-    background-color: ${({ theme }) => theme.codeHeaderColor};
-  }
-
-  pre {
-    background-color: ${colors.transparent} !important;
-  }
-
 `;
 
 export default GlobalStyle;

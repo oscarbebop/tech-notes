@@ -1,16 +1,13 @@
 import styled, { keyframes } from 'styled-components';
 
-import { animations, colors, shadows } from '../../../constants';
+import { animations, colors } from '../../../constants';
 
 export const CodeContainer = styled.div<{ isTheThemeWhite: boolean }>`
   width: 100%;
   border-radius: 5px;
-
   display: flex;
   flex-direction: column;
   transition: ${animations.normal};
-  ${({ isTheThemeWhite }) =>
-    isTheThemeWhite ? 'box-shadow: none;' : `box-shadow: ${shadows.dark};`}
 
   pre {
     transition: ${animations.normal};

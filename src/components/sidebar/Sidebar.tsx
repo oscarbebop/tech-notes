@@ -58,6 +58,7 @@ export default function Sidebar(): JSX.Element {
       <SidebarContainer
         ItIsActive={activeSidebar}
         isTheThemeDark={isTheThemeDark}
+        className="background"
       >
         <Header />
         <Searcher />
