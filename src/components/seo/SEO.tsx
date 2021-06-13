@@ -40,7 +40,7 @@ export default function SEO(props: IProps): JSX.Element {
       <meta name="description" content={websiteDescription} />
       <meta
         name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+        content="width=device-width, initial-scale=1, viewport-fit=cover"
       />
       <meta charSet="utf-8" />
       {/* Open Graph */}
