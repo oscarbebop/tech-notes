@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import MainContext from '../../../context/context';
 import { IContext, Lang } from '../../../context/types';
 
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { FiCopy } from 'react-icons/fi';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import {
@@ -33,7 +34,6 @@ export default function CodeBlock(props: IProps): JSX.Element {
   const lightTheme: boolean = theme === 'light';
 
   const handleCopyButton = (): void => {
-    navigator.clipboard.writeText(code);
     setShowPopUp(true);
   };
 
@@ -59,14 +59,16 @@ export default function CodeBlock(props: IProps): JSX.Element {
     <>
       <CodeContainer className="code_background" isTheThemeWhite={lightTheme}>
         <CodeHeader className="code_header_background">
-          <IconButton
-            isActive={showPopUp}
-            type="button"
-            onClick={handleCopyButton}
-            aria-label="copy button"
-          >
-            <FiCopy size="1.5em" color={colors.gray} />
-          </IconButton>
+          <CopyToClipboard text={code}>
+            <IconButton
+              isActive={showPopUp}
+              type="button"
+              onClick={handleCopyButton}
+              aria-label="copy button"
+            >
+              <FiCopy size="1.5em" color={colors.gray} />
+            </IconButton>
+          </CopyToClipboard>
         </CodeHeader>
         <SyntaxHighlighter
           language={technology}

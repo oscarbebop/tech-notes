@@ -72,11 +72,12 @@ export default function DefinitionTemplate(props: IProps): JSX.Element {
 
   return (
     <>
-      {!data ? (
+      {!data && (
         <Layout>
           <ParagraphPlaceholder />
         </Layout>
-      ) : (
+      )}
+      {data && (
         <>
           <SEO
             description={content[language][0].children[0].text}

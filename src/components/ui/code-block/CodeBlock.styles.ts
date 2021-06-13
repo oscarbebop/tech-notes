@@ -27,6 +27,7 @@ export const CodeHeader = styled.div`
 
 export const IconButton = styled.button<{ isActive: boolean }>`
   background-color: ${colors.transparent};
+  height: 100%;
   border: none;
   cursor: pointer;
   outline: none;
