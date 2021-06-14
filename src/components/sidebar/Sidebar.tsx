@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 
 import MainContext from '../../context/context';
-import { IContext, Lang, Theme } from '../../context/types';
+import { IContext, Lang } from '../../context/types';
 
 import { definitionsQuery } from '../../gql/definitions';
 import { technologieQuery } from '../../gql/technologies';
@@ -51,7 +51,6 @@ export default function Sidebar(): JSX.Element {
   }, [widthD]);
 
   const english: boolean = language === Lang.EN;
-  const isTheThemeDark = theme === Theme.dark;
 
   const [localTheme, setLocalTheme] = useState<undefined | string>(undefined);
 
@@ -63,11 +62,7 @@ export default function Sidebar(): JSX.Element {
 
   return (
     <Container ItIsActive={activeSidebar}>
-      <SidebarContainer
-        ItIsActive={activeSidebar}
-        isTheThemeDark={isTheThemeDark}
-        className="sidebar_background"
-      >
+      <SidebarContainer className="sidebar_background">
         <Header />
         <Searcher />
         <Heading>

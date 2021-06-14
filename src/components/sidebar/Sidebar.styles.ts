@@ -12,12 +12,7 @@ export const Container = styled.div<{ ItIsActive: boolean }>`
   transition: ${animations.slow};
 `;
 
-interface ISidebar {
-  ItIsActive: boolean;
-  isTheThemeDark: boolean;
-}
-
-export const SidebarContainer = styled.aside<ISidebar>`
+export const SidebarContainer = styled.aside`
   width: 230px;
   height: 100%;
   padding: 30px 10px 30px 30px;

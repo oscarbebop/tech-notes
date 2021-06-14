@@ -70,6 +70,10 @@ export default function DefinitionTemplate(props: IProps): JSX.Element {
     '{year}-{date-pad}-{month-pad}'
   );
 
+  console.log('================');
+  console.log(data);
+  console.log('================');
+
   return (
     <>
       {!data && (

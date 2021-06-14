@@ -5,9 +5,11 @@ import MainContext from '../context/context';
 import { IContext } from '../context/types';
 
 import Layout from '../components/layout';
-import { Title } from '../components/ui';
+import { ParagraphPlaceholder } from '../components/ui';
 
-export default function Home(): JSX.Element {
+export default function Home(props): JSX.Element {
+  const { path } = props;
+
   const { language } = useContext<IContext>(MainContext);
 
   useEffect(() => {
@@ -15,8 +17,8 @@ export default function Home(): JSX.Element {
   }, [language]);
 
   return (
-    <Layout>
-      <Title>&nbsp;</Title>
+    <Layout path={path}>
+      <ParagraphPlaceholder />
     </Layout>
   );
 }

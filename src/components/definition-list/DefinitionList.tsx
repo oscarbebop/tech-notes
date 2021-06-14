@@ -75,12 +75,6 @@ export default function DefinitionList(props: IProps): JSX.Element {
                 </LinkText>
               </Link>
             ))}
-      {/* {Array.from({ length: 20 }).map((_, i: number) => {
-        const algo = Math.floor(Math.random() * (90 - 65 + 1) + 65);
-        return (
-          <LinePlaceholder key={i} width={`${String(algo)}%`} height="13px" />
-        );
-      })} */}
     </Container>
   );
 }
