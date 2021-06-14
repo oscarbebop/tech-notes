@@ -70,10 +70,6 @@ export default function DefinitionTemplate(props: IProps): JSX.Element {
     '{year}-{date-pad}-{month-pad}'
   );
 
-  console.log('================');
-  console.log(data);
-  console.log('================');
-
   return (
     <>
       {!data && (
@@ -87,7 +83,7 @@ export default function DefinitionTemplate(props: IProps): JSX.Element {
             description={content[language][0].children[0].text}
             title={title}
           />
-          <Layout>
+          <Layout data={data ? true : false}>
             <Title>{title}</Title>
             <Subtitle>{technology[0].technologie}</Subtitle>
             <BaseBlockContent key={id} blocks={_rawContent[language]} />

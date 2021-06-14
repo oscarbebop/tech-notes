@@ -22,7 +22,7 @@ export default function HomeTemplate(): JSX.Element {
   return (
     <>
       {!data && (
-        <Layout>
+        <Layout data={data ? true : false}>
           <ParagraphPlaceholder />
         </Layout>
       )}

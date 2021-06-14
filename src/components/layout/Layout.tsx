@@ -24,7 +24,7 @@ export default function Layout(props: IProps): JSX.Element {
     <ThemeProvider theme={themeColor}>
       <GlobalStyles theme={themeColor} />
       <Container>
-        {path === '/' ? <SidebarPlaceHolder /> : <Sidebar />}
+        {path === '/' || !data ? <SidebarPlaceHolder /> : <Sidebar />}
         <Content>{children}</Content>
       </Container>
     </ThemeProvider>
@@ -32,5 +32,6 @@ export default function Layout(props: IProps): JSX.Element {
 }
 
 Layout.defaultProps = {
-  path: null
+  path: null,
+  data: true
 };
