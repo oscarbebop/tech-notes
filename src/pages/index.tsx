@@ -4,21 +4,14 @@ import { navigate } from 'gatsby';
 import MainContext from '../context/context';
 import { IContext } from '../context/types';
 
-import Layout from '../components/layout';
-import { ParagraphPlaceholder } from '../components/ui';
+import LayoutPlaceholder from '../components/layout-placeholder';
 
-export default function Home(props): JSX.Element {
-  const { path } = props;
-
+export default function Home(): JSX.Element {
   const { language } = useContext<IContext>(MainContext);
 
   useEffect(() => {
     navigate(`/${language}`);
   }, [language]);
 
-  return (
-    <Layout path={path}>
-      <ParagraphPlaceholder />
-    </Layout>
-  );
+  return <LayoutPlaceholder />;
 }

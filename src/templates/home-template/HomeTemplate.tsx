@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
 import MainContext from '../../context/context';
-import { IContext, Theme } from '../../context/types';
+import { IContext } from '../../context/types';
 
 import { homeQuery } from '../../gql/home';
 import { SanityPages } from '../../graphqlTypes';
@@ -19,10 +19,18 @@ export default function HomeTemplate(): JSX.Element {
 
   const { language } = useContext<IContext>(MainContext);
 
+  console.log('================');
+  console.log(!data ? 'mal' : 'bien');
+  console.log('================');
+
+  console.log('================');
+  console.log(data);
+  console.log('================');
+
   return (
     <>
       {!data && (
-        <Layout data={data ? true : false}>
+        <Layout>
           <ParagraphPlaceholder />
         </Layout>
       )}

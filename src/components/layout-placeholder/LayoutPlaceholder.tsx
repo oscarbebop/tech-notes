@@ -6,23 +6,20 @@ import { IContext } from '../../context/types';
 import GlobalStyles from '../../styles';
 import { ThemeProvider } from 'styled-components';
 import { Container, Content } from './Layout.styles';
-import Sidebar from '../sidebar/Sidebar';
+import SidebarPlaceHolder from '../sidebar-placeholder';
+import { ParagraphPlaceholder } from '../ui';
 
-interface IProps {
-  children: React.ReactNode;
-}
-
-export default function Layout(props: IProps): JSX.Element {
-  const { children } = props;
-
+export default function LayoutPlaceholder(): JSX.Element {
   const { themeColor } = useContext<IContext>(MainContext);
 
   return (
     <ThemeProvider theme={themeColor}>
       <GlobalStyles theme={themeColor} />
       <Container>
-        <Sidebar />
-        <Content>{children}</Content>
+        <SidebarPlaceHolder />
+        <Content>
+          <ParagraphPlaceholder />
+        </Content>
       </Container>
     </ThemeProvider>
   );
