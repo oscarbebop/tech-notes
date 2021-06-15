@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { animations } from '../../constants';
 
@@ -10,6 +10,13 @@ export const Container = styled.div<{ ItIsActive: boolean }>`
   top: 0;
   ${({ ItIsActive }) => (ItIsActive ? 'left: 0;' : 'left: -230px;')}
   transition: ${animations.slow};
+`;
+
+export const FilterContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
 `;
 
 export const SidebarContainer = styled.aside`
@@ -31,6 +38,7 @@ export const SidebarButton = styled.button<{ ItIsActive: boolean }>`
   justify-content: center;
   align-items: center;
   transition: ${animations.normal};
+  z-index: 1;
 
   svg {
     transition: ${animations.slow};
@@ -46,4 +54,18 @@ export const SettingsContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-top: 10px;
+`;
+
+export const Cover = styled.div<{ activeSidebar: boolean }>`
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 0;
+  display: none;
+
+  @media (max-width: 1200px) {
+    display: block;
+    ${({ activeSidebar }) => activeSidebar && 'cursor: pointer;'}
+    ${({ activeSidebar }) => !activeSidebar && 'display: none;'}
+  }
 `;

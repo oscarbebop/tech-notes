@@ -19,6 +19,7 @@ import {
   LanguageButton,
   LinePlaceholder,
   Selector,
+  Small,
   ThemeButton
 } from '../ui';
 import DefinitionList from '../definition-list';
@@ -26,6 +27,8 @@ import Header from '../header';
 import Searcher from '../searcher';
 import {
   Container,
+  Cover,
+  FilterContainer,
   SettingsContainer,
   SidebarButton,
   SidebarContainer
@@ -71,6 +74,9 @@ export default function Sidebar(): JSX.Element {
             `${totalCount} ${english ? 'Definitions' : 'Definiciones'}`}
         </Heading>
         <DefinitionList definitions={nodes} />
+        <FilterContainer>
+          <Small>{english ? 'Filter' : 'Filtro'}</Small>
+        </FilterContainer>
         <Selector technologies={technologies} />
         <SettingsContainer>
           <ThemeButton />
@@ -86,6 +92,11 @@ export default function Sidebar(): JSX.Element {
       >
         <Arrow color={dinamicTheme ? colors.dark : colors.white} size="2em" />
       </SidebarButton>
+      <Cover
+        activeSidebar={activeSidebar}
+        role="button"
+        onClick={() => handleSidebar(false)}
+      />
     </Container>
   );
 }
