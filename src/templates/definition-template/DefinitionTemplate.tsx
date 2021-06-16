@@ -13,13 +13,7 @@ import BaseBlockContent from '@sanity/block-content-to-react';
 import Layout from '../../components/layout';
 import LayoutPlaceholder from '../../components/layout-placeholder';
 import SEO from '../../components/seo';
-import {
-  CodeBlock,
-  ParagraphPlaceholder,
-  Small,
-  Subtitle,
-  Title
-} from '../../components/ui';
+import { CodeBlock, Small, Subtitle, Title } from '../../components/ui';
 
 import { DateContainer } from './DefinitionTemplate.styles';
 

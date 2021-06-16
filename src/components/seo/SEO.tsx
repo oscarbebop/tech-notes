@@ -30,11 +30,6 @@ export default function SEO(props: IProps): JSX.Element {
   const websiteDescription =
     language === Lang.EN ? enlgishDescription : spanishDescription;
 
-  console.log('================');
-  console.log(title);
-  console.log(websiteTitle);
-  console.log('================');
-
   return (
     <Helmet titleTemplate={`%s | ${websiteTitle}`}>
       <html lang={language} />
