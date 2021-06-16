@@ -4,12 +4,12 @@ dotenv.config({ path: '.env' });
 
 module.exports = {
   siteMetadata: {
-    title: 'tech notes',
+    title: 'Tech Notes',
     siteUrl: 'https://tech-notes.dev/',
     enlgishDescription:
-      'tech notes is a page of references and simple definitions about web technologies, programming languages, frameworks and libraries.',
+      'Tech notes is a page of references and simple definitions about web technologies, programming languages, frameworks and libraries.',
     spanishDescription:
-      'tech notes es una página de referencias y definiciones simples sobre tecnologías web, lenguajes de programación, frameworks y librerías. ',
+      'Tech notes es una página de referencias y definiciones simples sobre tecnologías web, lenguajes de programación, frameworks y librerías. ',
     twitter: '@oscarbebop',
     image: '/promotional.jpg'
   },

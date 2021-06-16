@@ -11,6 +11,7 @@ import { Query } from '../../graphqlTypes';
 import BaseBlockContent from '@sanity/block-content-to-react';
 
 import Layout from '../../components/layout';
+import LayoutPlaceholder from '../../components/layout-placeholder';
 import SEO from '../../components/seo';
 import {
   CodeBlock,
@@ -72,11 +73,7 @@ export default function DefinitionTemplate(props: IProps): JSX.Element {
 
   return (
     <>
-      {!data && (
-        <Layout>
-          <ParagraphPlaceholder />
-        </Layout>
-      )}
+      {!data && <LayoutPlaceholder />}
       {data && (
         <>
           <SEO

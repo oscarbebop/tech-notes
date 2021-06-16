@@ -30,6 +30,11 @@ export default function SEO(props: IProps): JSX.Element {
   const websiteDescription =
     language === Lang.EN ? enlgishDescription : spanishDescription;
 
+  console.log('================');
+  console.log(title);
+  console.log(websiteTitle);
+  console.log('================');
+
   return (
     <Helmet titleTemplate={`%s | ${websiteTitle}`}>
       <html lang={language} />
@@ -44,14 +49,22 @@ export default function SEO(props: IProps): JSX.Element {
       />
       <meta charSet="utf-8" />
       {/* Open Graph */}
-      <meta property="og:image" content={image} />
       <meta property="og:title" content={title} key="ogtitle" />
-      <meta property="og:site_name" content={websiteTitle} key="ogsitename" />
+      <meta property="og:image" content={image} />
       <meta
         property="og:description"
         content={description || websiteDescription}
         key="ogdesc"
       />
+      <meta property="og:site_name" content={websiteTitle} key="ogsitename" />
+      {/* twitter */}
+      <meta name="twitter:title" content={title} />
+      <meta
+        name="twitter:description"
+        content={description || websiteDescription}
+      />
+      <meta name="twitter:image" content={image} />
+      <meta name="twitter:card" content="summary_large_image" />
     </Helmet>
   );
 }

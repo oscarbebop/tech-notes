@@ -9,8 +9,9 @@ import { SanityPages } from '../../graphqlTypes';
 import BaseBlockContent from '@sanity/block-content-to-react';
 
 import Layout from '../../components/layout';
+import LayoutPlaceholder from '../../components/layout-placeholder';
 import SEO from '../../components/seo';
-import { CodeBlock, ParagraphPlaceholder, Title } from '../../components/ui';
+import { CodeBlock, Title } from '../../components/ui';
 
 export default function HomeTemplate(): JSX.Element {
   const data: SanityPages = homeQuery();
@@ -21,14 +22,10 @@ export default function HomeTemplate(): JSX.Element {
 
   return (
     <>
-      {!data && (
-        <Layout>
-          <ParagraphPlaceholder />
-        </Layout>
-      )}
+      {!data && <LayoutPlaceholder />}
       {data && (
         <>
-          <SEO title="Home" />
+          <SEO title="Welcome" />
           <Layout>
             <Title>{title}</Title>
             <BaseBlockContent key={id} blocks={_rawContent[language]} />
