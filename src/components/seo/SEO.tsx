@@ -63,7 +63,10 @@ export default function SEO(props: IProps): JSX.Element {
         name="twitter:description"
         content={description || websiteDescription}
       />
-      <meta name="twitter:image" content={image} />
+      <meta
+        name="twitter:image"
+        content="https://tech-notes.dev/promotional.jpg"
+      />
       <meta name="twitter:card" content="summary_large_image" />
     </Helmet>
   );
