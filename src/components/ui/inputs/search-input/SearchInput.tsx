@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
 import MainContext from '../../../../context/context';
-import { IContext, Lang, Theme } from '../../../../context/types';
+import { IContext, Lang } from '../../../../context/types';
 
 import { FiSearch as Search } from 'react-icons/fi';
 
@@ -9,7 +9,7 @@ import { colors } from '../../../../constants';
 import { Container, Input } from './SearchInput.styles';
 
 export default function SearchInput(): JSX.Element {
-  const { language, setSearchValue, theme } = useContext<IContext>(MainContext);
+  const { language, setSearchValue } = useContext<IContext>(MainContext);
 
   const english: boolean = language === Lang.EN;
 
@@ -18,7 +18,7 @@ export default function SearchInput(): JSX.Element {
       <Search size="1.5em" color={colors.gray} />
       <Input
         type="text"
-        placeholder={english ? 'Search...' : 'Buscar...'}
+        placeholder={english ? 'Search ...' : 'Buscar ...'}
         onChange={event => setSearchValue(event.target.value)}
       />
     </Container>
