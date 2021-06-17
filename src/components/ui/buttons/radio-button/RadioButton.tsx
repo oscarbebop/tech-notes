@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'gatsby';
 
 import MainContext from '../../../../context/context';
-import { IContext, Theme } from '../../../../context/types';
+import { IContext, Lang, Theme } from '../../../../context/types';
 
 import { colors } from '../../../../constants';
 import { Large } from '../../../ui';
@@ -18,7 +18,13 @@ export default function RadioButton(props: IProps): JSX.Element {
 
   const { currentURL, theme } = useContext<IContext>(MainContext);
 
-  const url: string = currentURL || '';
+  let url: string;
+
+  if (currentURL === 'about' || currentURL === 'acerca') {
+    url = languageName === Lang.EN ? 'about' : 'acerca';
+  } else {
+    url = currentURL || '';
+  }
 
   const color = theme === Theme.light ? `${colors.dark}` : `${colors.white}`;
 

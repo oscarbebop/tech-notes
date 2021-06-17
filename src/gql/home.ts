@@ -1,7 +1,5 @@
 import { graphql, useStaticQuery } from 'gatsby';
 
-// import { SanityPages } from '@/graphqlTypes';
-
 export const homeQuery = () => {
   const { sanityPages } = useStaticQuery(graphql`
     query {

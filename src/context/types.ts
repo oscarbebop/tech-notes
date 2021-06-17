@@ -1,10 +1,11 @@
 export enum CategoryFilter {
   all = 'all',
-  javascript = 'javascript',
-  typescript = 'typescript',
-  python = 'python',
+  css = 'css',
   html = 'html',
-  css = 'css'
+  javascript = 'javascript',
+  python = 'python',
+  react = 'react',
+  typescript = 'typescript'
 }
 
 export enum ContextTypes {

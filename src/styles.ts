@@ -61,6 +61,13 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${colors.transparent} !important;
   }
 
+  .about_button:hover {
+    background-color: ${({ theme }) => theme.backgroundColor};
+    box-shadow: ${({ theme }) => theme.shadow};
+    opacity: 1;
+    cursor: pointer;
+  }
+
   .code_background {
     background-color: ${({ theme }) => theme.codeEditorBackground};
     box-shadow: ${({ theme }) => theme.onlyShadowOnDarkTheme};
