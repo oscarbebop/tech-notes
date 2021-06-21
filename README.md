@@ -1,6 +1,6 @@
 <br />
 <p align="center">
-  <a href="https://tech-notes.dev/">
+  <a href="https://tech-notes.dev/" target="_blank">
     <img src="static/logo.png" alt="Logo">
   </a>
 
@@ -42,7 +42,7 @@ Currently the project has a dark theme built in and can be easily changed with a
 
 ## Stack
 
-Tech Notes is developed on a [MERN Stack](https://getbootstrap.com). These are the technologies that mainly compose it:
+Tech Notes is developed on a [JAM Stack](https://jamstack.org/){:target="\_blank"}. These are the technologies that mainly compose it:
 
 - [React](https://reactjs.org/)
 - [Gatsby](https://www.gatsbyjs.com/)
