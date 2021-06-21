@@ -42,7 +42,7 @@ Currently the project has a dark theme built in and can be easily changed with a
 
 ## Stack
 
-Tech Notes is developed on a [JAM Stack](https://jamstack.org/){:target="\_blank"}. These are the technologies that mainly compose it:
+Tech Notes is developed on a [JAM Stack](https://jamstack.org/). These are the technologies that mainly compose it:
 
 - [React](https://reactjs.org/)
 - [Gatsby](https://www.gatsbyjs.com/)
